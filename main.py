@@ -15,7 +15,11 @@ def get_audio_url(video_id: str):
         'format': 'bestaudio',
         'quiet': True,
         'noplaylist': True,
-        'js_runtimes': {'deno': {'path': r'C:\Users\theus\.deno\bin\deno.exe'}}
+        'js_runtimes': {
+    'deno': {
+        'path': '/opt/render/.deno/bin/deno'
+    }
+}
     }
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
         info = ydl.extract_info(f"https://www.youtube.com/watch?v={video_id}", download=False)
